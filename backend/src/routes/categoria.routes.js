@@ -15,6 +15,4 @@ router.put("/:id",controller.updateCategoria);
 
 router.delete("/:id",controller.deleteCategoria);
 
-
-
 module.exports=router;

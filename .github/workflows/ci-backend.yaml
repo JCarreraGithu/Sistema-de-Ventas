@@ -1,0 +1,29 @@
+name: CI Backend
+
+on: push:
+  branches: [ main ]
+  paths: 
+    - 'backend/**'
+  pull_request:
+    branches: [ main ]
+    paths: 
+      -'backend/**'
+
+  jobs build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps: 
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar entorno de Node.js 
+      uses: actions/setup-node@v4
+      with: 
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: 'backend/package.json'
+    -name: Instalar Dependencias del Backend
+     run: |
+      cd backend 
+      npm install
+    

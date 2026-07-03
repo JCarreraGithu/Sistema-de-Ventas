@@ -1,0 +1,5 @@
+Instalaciones para Backend
+
+-Node js
+-npm install express cors dotenv oracledb
+-npm install nodemon -D

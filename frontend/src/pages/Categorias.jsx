@@ -1,155 +1,155 @@
-import {useEffect,useState} from "react";
-import api from "../api/api";
+    import {useEffect,useState} from "react";
+    import api from "../api/api";
 
 
-function Categorias(){
+    function Categorias(){
 
 
-const [categorias,setCategorias]=useState([]);
+    const [categorias,setCategorias]=useState([]);
 
 
-const [nombre,setNombre]=useState("");
-const [descripcion,setDescripcion]=useState("");
+    const [nombre,setNombre]=useState("");
+    const [descripcion,setDescripcion]=useState("");
 
 
 
-const cargar=()=>{
+    const cargar=()=>{
 
 
-api.get("/categorias")
-.then(res=>{
+    api.get("/categorias")
+    .then(res=>{
 
-setCategorias(res.data)
+    setCategorias(res.data)
 
-})
+    })
 
 
-}
+    }
 
 
-useEffect(()=>{
+    useEffect(()=>{
 
-cargar();
+    cargar();
 
-},[])
+    },[])
 
 
 
 
-const guardar=async()=>{
+    const guardar=async()=>{
 
 
-await api.post("/categorias",{
+    await api.post("/categorias",{
 
-nombre,
-descripcion
+    nombre,
+    descripcion
 
-});
+    });
 
 
-setNombre("");
-setDescripcion("");
+    setNombre("");
+    setDescripcion("");
 
-cargar();
+    cargar();
 
 
-}
+    }
 
 
 
 
-return (
+    return (
 
-<div className="container mt-4">
+    <div className="container mt-4">
 
 
-<h2>Categorías</h2>
+    <h2>Categorías</h2>
 
 
-<div className="card p-3">
+    <div className="card p-3">
 
 
-<input
-className="form-control mb-2"
-placeholder="Nombre"
-value={nombre}
-onChange={e=>setNombre(e.target.value)}
-/>
+    <input
+    className="form-control mb-2"
+    placeholder="Nombre"
+    value={nombre}
+    onChange={e=>setNombre(e.target.value)}
+    />
 
 
-<input
-className="form-control mb-2"
-placeholder="Descripción"
-value={descripcion}
-onChange={e=>setDescripcion(e.target.value)}
-/>
+    <input
+    className="form-control mb-2"
+    placeholder="Descripción"
+    value={descripcion}
+    onChange={e=>setDescripcion(e.target.value)}
+    />
 
 
-<button
-className="btn btn-primary"
-onClick={guardar}
->
+    <button
+    className="btn btn-primary"
+    onClick={guardar}
+    >
 
-Guardar
+    Guardar
 
-</button>
+    </button>
 
 
-</div>
+    </div>
 
 
 
-<table className="table mt-3">
+    <table className="table mt-3">
 
 
-<thead>
+    <thead>
 
-<tr>
-<th>ID</th>
-<th>Nombre</th>
-<th>Descripción</th>
-</tr>
+    <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    </tr>
 
-</thead>
+    </thead>
 
 
-<tbody>
+    <tbody>
 
 
-{
-categorias.map(c=>(
+    {
+    categorias.map(c=>(
 
-<tr key={c.ID}>
+    <tr key={c.ID}>
 
-<td>{c.ID}</td>
+    <td>{c.ID}</td>
 
-<td>{c.NOMBRE}</td>
+    <td>{c.NOMBRE}</td>
 
-<td>{c.DESCRIPCION}</td>
+    <td>{c.DESCRIPCION}</td>
 
 
-</tr>
+    </tr>
 
 
-))
+    ))
 
-}
+    }
 
 
-</tbody>
+    </tbody>
 
 
-</table>
+    </table>
 
 
 
-</div>
+    </div>
 
 
-)
+    )
 
 
-}
+    }
 
 
-export default Categorias;
+    export default Categorias;

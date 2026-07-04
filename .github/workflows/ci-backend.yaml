@@ -1,17 +1,17 @@
 name: CI Backend
 
-on: 
+on:
   push:
     branches: [ main ]
-    paths: 
+    paths:
       - 'backend/**'
   pull_request:
-      branches: [ main ]
-      paths: 
-        -'backend/**'
+    branches: [ main ]
+    paths:
+      - 'backend/**'
 
-  jobs:
-    build-and-test:
+jobs:
+  build-and-test:
     runs-on: ubuntu-latest
     
     steps: 

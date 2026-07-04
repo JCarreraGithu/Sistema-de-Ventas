@@ -21,7 +21,7 @@
 
     setCategorias(res.data)
 
-    })
+    )
 
 
     }

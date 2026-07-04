@@ -1,10 +1,8 @@
-name: CI nuevo Backend
+name: CI Backend
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'backend/**'
+    branches: [ main, jimmy-pruebas ]
   pull_request:
     branches: [ main ]
     paths:

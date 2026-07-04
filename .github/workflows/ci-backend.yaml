@@ -24,7 +24,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         cache-dependency-path: 'backend/package.json'
-    -name: Instalar Dependencias del Backend
+    - name: Instalar Dependencias del Backend
     run: |
       cd backend 
       npm install

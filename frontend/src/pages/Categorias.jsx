@@ -11,7 +11,7 @@
     const [nombre,setNombre]=useState("");
     const [descripcion,setDescripcion]=useState("");
 
-
+//pruebas de yaml
 
     const cargar=()=>{
 
@@ -23,7 +23,7 @@
 
     )
 
-
+    }
     }
 
 

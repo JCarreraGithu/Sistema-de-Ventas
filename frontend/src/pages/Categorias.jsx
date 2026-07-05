@@ -4,7 +4,7 @@
 
     function Categorias(){
 
-
+//test: activando pipeline del frontend con un cambio real
     const [categorias,setCategorias]=useState([]);
 
 

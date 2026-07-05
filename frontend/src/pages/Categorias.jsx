@@ -4,14 +4,14 @@
 
     function Categorias(){
 
-
+//test: activando pipeline del frontend con un cambio real
     const [categorias,setCategorias]=useState([]);
 
 
     const [nombre,setNombre]=useState("");
     const [descripcion,setDescripcion]=useState("");
 
-
+//pruebas de yaml
 
     const cargar=()=>{
 
@@ -21,9 +21,9 @@
 
     setCategorias(res.data)
 
-    })
+    )
 
-
+    }
     }
 
 
